@@ -23,6 +23,19 @@ This is the GNU Debugger downloader & installer to use with QEMU Docker image.
 ./gdb_pro.sh
 ```
 
+- Change your C file name as `main.c`
+
+- When GDB prompt is open, type the following:
+```sh
+file <your_axf_file>
+target remote :1234
+layout src
+b main
+c
+```
+
+You should see the main function and layout of the file in your terminal.
+
 # PREFERRED RUNNING STRUCTURE:
 - Open 2 terminal sessions concurrently and run `run.sh` in one of them at first and wait until it executes completely and you see a (QEMU) prompt.
 - Then, switch to the other terminal and run `gdb_pro.sh` to connect with the running QEMU instance which is loaded with your .axf file.
@@ -32,3 +45,10 @@ This is the GNU Debugger downloader & installer to use with QEMU Docker image.
 - Type `q` and press Enter.
 - Repeat the previous instruction until it works.
 
+## IMPORTANT GDB COMMANDS:
+- c: Continue until next breakpoint
+- s: Step into (works as next if there's no function to step into)
+- n: Next
+- print <variable_name>: Prints the value of the variable
+- print <statement>: Executes the statement and prints it after.
+- q: Quit 
