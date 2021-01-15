@@ -6,6 +6,7 @@ This is the installation script for docker image of the specialized QEMU in CmpE
 ### How to Run:
 
 ### BELOW IS IMPORTANT:
+- Install Docker
 - First, change directory to where your .axf file resides
 ### ABOVE IS IMPORTANT: 
 
@@ -29,8 +30,8 @@ This is the GNU Debugger downloader & installer to use with QEMU Docker image.
 ```sh
 file <your_axf_file>
 target remote :1234
-layout src
 b main
+layout src
 c
 ```
 
